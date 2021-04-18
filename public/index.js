@@ -1,0 +1,3 @@
+$('#myVideo').draggable();
+$('#explainerTextBox').draggable();
+

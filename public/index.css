@@ -1,0 +1,466 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  zoom: 150%;
+  overflow: hidden;
+  font-family: sans, Arial, sans-serif;
+}
+
+#f{
+  visibility: hidden;
+  z-index: 10;
+  position: fixed;
+  left: 36%;
+  top: 35%;
+  letter-spacing: 0.05em;
+  font: 8px/1.5 sans, Arial, sans-serif;
+  font-weight: 700;
+  color: #666;
+  /*Microsoft Yahei, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /* font-family: "Arial";*/
+}
+
+#ipMapId{
+  z-index: -11;
+}
+
+#messageBox{
+  /*z-index: -10;*/
+    visibility: hidden;
+  z-index: 10;
+  position: fixed;
+  left: 36%;
+  top: 35%;
+  letter-spacing: 0.05em;
+  font: 8px/1.5 sans, Arial, sans-serif;
+  font-weight: 700;
+  color: #666;
+}
+
+
+#myVideo{
+  /*z-index: 10;*/
+  visibility: hidden;
+  position: fixed;
+  right: 5%;
+  bottom: 15%;
+  width: 60%;
+  /* height: 100%; */
+}
+
+#myVideo.visible{
+  visibility: visible;
+}
+
+#errInfo{
+  z-index: 5;
+  position: fixed;
+  left: 36%;
+  top: 58%;
+  font: 8px;
+  color:#666;
+  font-family: sans, Arial, sans-serif;
+}
+
+/* //////// Technodiversity code starts here //////////// */
+
+.imgid{
+  width: 50px;
+  height: 50px;
+}
+
+nav{
+  position: relative;
+  z-index: 10;
+}
+
+#errInfo p{
+  font-size: 12px; 
+  font-weight:400;
+}
+
+#errInfo ul{
+  font-size: 11px;
+  font-weight:400; 
+  line-height:1.5;
+  padding:0 0 0 3em;
+}
+
+#errInfo li{
+  font-size: 8pt;
+}
+
+#errConnect{
+  font-size: 9px !important;
+  font-weight: 400;
+}
+
+#errInfo.tryc{
+  font-size: 9pt;
+}
+
+video{
+  outline: none;
+}
+
+.explainerTextBox{
+  font-family: 'Noto Sans JP', sans-serif;
+  position: absolute;
+  float: left;
+  width: 20%;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  position: absolute;
+  left: 4%;
+  bottom: 10%;
+  overflow: scroll;
+  z-index: 8;
+  border-radius: 0.3em;
+  padding: 1.5em;
+  touch-action: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.explainerTextBox::-webkit-scrollbar {
+  display: none;
+}
+
+#ES{
+  visibility: hidden;
+}
+
+#EN{
+  visibility: hidden;
+}
+
+#中文{
+  visibility: hidden;
+}
+
+.guoHeader{
+  font: 10px/1.5 sans, 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+}
+
+.workName{
+  font: 9px/1.5 sans, 'Noto Sans JP', sans-serif;
+  font-weight: bold;
+}
+
+.exText{
+  font: 8px/1.5 sans, 'Noto Sans JP', sans-serif;
+}
+
+#destination{
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  font-size: 10px;
+  visibility: hidden;
+
+}
+
+#destText{
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #e74c3c;
+}
+
+
+nav{
+  position:fixed;
+  top:5%;
+  left:4%;
+  min-width:40px;
+  min-height:40px;
+  overflow:hidden;
+  color:#595961;
+}
+
+nav ul{
+  overflow:hidden;
+  width:0;
+  height:0;
+  padding:0;
+  margin:0;
+  transition:width 0.5s, height 0.5s;
+  list-style:none;
+}
+nav input:checked ~ ul{
+  width:200px;
+  height:90px;
+}
+
+nav input{
+  display:none;
+}
+
+nav input:checked ~ label span:last-child{
+  display:none;
+}
+nav input:not(:checked) ~ label span:first-child{
+  display:none;
+}
+
+.listText{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+}
+
+.closeTextBox{
+  position: absolute;
+  right: 10%;
+  /* top: 10px */
+}
+
+a, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+span { cursor: pointer; }
+
+/* //////// Technodiversity code ends here //////////// */
+
+.icon {
+  -webkit-user-select: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.icon-offline {
+  content: -webkit-image-set( url(assets/default_100_percent/100-error-offline.png) 1x, url(assets/default_200_percent/200-error-offline.png) 2x);
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Offline page */
+
+.offline .interstitial-wrapper {
+  color: #2b2b2b;
+  font-size: 1em;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.offline .runner-container {
+  height: 150px;
+  max-width: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 35px;
+  width: 44px;
+}
+
+.offline .runner-canvas {
+  height: 150px;
+  max-width: 600px;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.offline .controller {
+  background: rgba(247, 247, 247, .1);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+#offline-resources {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .suggested-left > #control-buttons, .suggested-right > #control-buttons {
+    float: none;
+  }
+  .snackbar {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media (max-height: 350px) {
+  h1 {
+    margin: 0 0 15px;
+  }
+  .icon-offline {
+    margin: 0 0 10px;
+  }
+  .interstitial-wrapper {
+    margin-top: 5%;
+  }
+  .nav-wrapper {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 736px) and (orientation: landscape) {
+  .offline .interstitial-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 420px) and (max-width: 736px) and (min-height: 240px) and (max-height: 420px) and (orientation:landscape) {
+  .interstitial-wrapper {
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-height: 240px) and (orientation: landscape) {
+  .offline .interstitial-wrapper {
+    margin-bottom: 90px;
+  }
+  .icon-offline {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 320px) and (orientation: landscape) {
+  .icon-offline {
+    margin-bottom: 0;
+  }
+  .offline .runner-container {
+    top: 10px;
+  }
+
+}
+
+@media (max-width: 240px) {
+  .interstitial-wrapper {
+    overflow: inherit;
+    padding: 0 8px;
+  }
+}
+
+@media screen and (orientation: portrait) {
+}
+/*480*/
+@media screen and (min-width: 30em){
+
+}
+/*768*/
+@media screen and (min-width: 48em){
+}
+/*960*/
+@media screen and (min-width: 60em){
+  #errInfo{
+    left: 25%;
+    top: 53%;
+  }
+}
+#myVideo{
+  z-index: 12;
+}
+/*1240*/
+@media screen and (min-width: 76em){
+  #myVideo{
+    width: 50%;
+  }
+}
+/*1440*/
+@media screen and (min-width: 90em){
+}
+/*1280*/
+@media screen and (max-width: 80em){
+}
+/*1216*/
+@media screen and (max-width: 76em){
+}
+/*960*/
+@media screen and (max-width: 60em){
+}
+/*640*/
+@media screen and (max-width: 40em){
+
+	body {text-rendering: optimizeSpeed;}
+  #errInfo{
+    left: 12%;
+    top: 52%;
+  }
+
+  #errInfo p{
+    font-size: 8pt;
+  }
+
+  #errInfo li{
+    font-size: 6pt;
+  }
+  #myVideo{
+    width: 80%;
+  }
+
+  #errConnect{
+    font-size: 5px !important;
+    font-weight: 400;
+  }
+
+  .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
+    font-size: 7px;
+}
+.imgid{
+  height: 40px;
+}
+.explainerTextBox{
+  padding: 0.7rem;
+  width: 60%;
+}
+}
+
+/*960*/
+@media screen and (max-width: 60em) and (orientation: landscape){
+  #errInfo{
+    left: 52%;
+    top: 5%;
+  }
+  #errInfo p{
+    font-size: 5pt !important;
+  }
+
+  #errInfo li{
+    font-size: 4pt;
+  }
+
+  #errConnect{
+    font-size: 3px;
+    font-weight: 400;
+  }
+
+  .leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
+    font-size: 7px;
+}
+#myVideo{
+  width: 50%;
+}
+
+.explainerTextBox{
+  padding: 0.7rem;
+  width: 35%;
+}
+
+.imgid{
+  height: 34px;
+}
+#destination{
+  font-size: 6.5pt;
+}
+}
